@@ -1,0 +1,31 @@
+C:\Users\Женя\source\repos\lab1\lab1\bin\Debug\lab1.exe.config
+C:\Users\Женя\source\repos\lab1\lab1\bin\Debug\lab1.exe
+C:\Users\Женя\source\repos\lab1\lab1\bin\Debug\lab1.pdb
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\MainWindow.g.cs
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\App.g.cs
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\lab1_MarkupCompile.cache
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\lab1_MarkupCompile.lref
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\MainWindow.baml
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\lab1.g.resources
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\lab1.Properties.Resources.resources
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\lab1.exe
+C:\Users\Женя\source\repos\lab1\lab1\obj\Debug\lab1.pdb
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\bin\Debug\lab1.exe.config
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\bin\Debug\lab1.exe
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\bin\Debug\lab1.pdb
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1.csproj.SuggestedBindingRedirects.cache
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\MainWindow.g.cs
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\App.g.cs
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1_MarkupCompile.cache
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1_MarkupCompile.lref
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\MainWindow.baml
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1.g.resources
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1.Properties.Resources.resources
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1.exe
+C:\Users\ros windows\Desktop\wpf\sp-wpf-main\lab1\lab1\obj\Debug\lab1.pdb
