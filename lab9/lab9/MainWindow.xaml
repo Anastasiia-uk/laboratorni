@@ -1,0 +1,261 @@
+﻿<Window x:Class="lab9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab9"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
+        <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed" />
+        <CommandBinding Command="ApplicationCommands.SaveAs" Executed="SaveAs_Executed" />
+        <CommandBinding Command="ApplicationCommands.New" Executed="New_Executed" />
+        <CommandBinding Command="ApplicationCommands.Close" Executed="Exit_Executed" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.Close" Key="Esc"/>
+    </Window.InputBindings>
+    <Window.Resources>
+        <SolidColorBrush x:Key="foregroundColor" Color="Black" />
+        <FontFamily x:Key="fontFamily" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="0.7*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Grid.ColumnSpan="2" Foreground="{DynamicResource foregroundColor}" FontFamily="{DynamicResource fontFamily}" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}">
+            <MenuItem Header="File">
+                <MenuItem Name="NewMenuItem" Header="New" Command="ApplicationCommands.New">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/new.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Open" Command="ApplicationCommands.Open">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/open.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="SaveMenuItem" Header="Save" Command="ApplicationCommands.Save">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/save.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="SaveAsMenuItem" Header="Save as" Command="ApplicationCommands.SaveAs">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/save as.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Exit (Esc)" Command="ApplicationCommands.Close">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/exit.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Cut" Command="ApplicationCommands.Cut">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/cut.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Properties" Click="PropButton_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/prop.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Copy" Command="ApplicationCommands.Copy">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/copy.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Paste" Command="ApplicationCommands.Paste">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/paste.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Color" Click="ColorButton_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/color.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Brush">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/brush.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Tools">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/tools.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Select" Click="SelectButton_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/select.png" Width="20" Height="20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Point">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/point.png" Width="7" Height="7"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Line">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/line.png" Width="20" Height="20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Rect">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/rect.png" Width="20" Height="20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Ellipse">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/ellipse.png" Width="20" Height="20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBar Grid.Row="1" Grid.ColumnSpan="2">
+            <Button Name="NewButton" Command="ApplicationCommands.New">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/new.png" Width="20" Height="20"/>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">New</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Command="ApplicationCommands.Open">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/open.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Open</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="SaveButton" Command="ApplicationCommands.Save">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/save.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Save</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="SaveAsButton" Command="ApplicationCommands.SaveAs">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/save as.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Save As</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Command="ApplicationCommands.Cut">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/cut.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Cut</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Command="ApplicationCommands.Copy">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/copy.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Copy</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Command="ApplicationCommands.Paste">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/paste.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Paste</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Command="ApplicationCommands.Close">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/exit.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Exit</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="ColorButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/color.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Color</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="BrushButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/brush.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Brush</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="PointButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/point.png" Width="7" Height="7"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Point</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="LineButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/line.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Line</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="RectButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/rect.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Rect</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="EllipseButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/ellipse.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Ellipse</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="SelectButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/select.png" Width="20" Height="20"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Select</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="PropButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/prop.png" Width="18" Height="18"></Image>
+                    <TextBlock Foreground="{DynamicResource foregroundColor}" HorizontalAlignment="Center" VerticalAlignment="Center">Properties</TextBlock>
+                </StackPanel>
+            </Button>
+        </ToolBar>
+        <Border Grid.Row="2">
+            <InkCanvas Name="inkCanvas" MouseMove="inkCanvas_MouseMove" 
+                       MouseLeave="inkCanvas_MouseLeave" EditingMode="Ink" 
+                       PreviewMouseLeftButtonDown="inkCanvas_MouseLeftButtonDown" 
+                       MouseLeftButtonUp="inkCanvas_MouseLeftButtonUp" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}">
+                <Image Name="MainImage" Height="330"/>
+                <InkCanvas.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Cut" Command="ApplicationCommands.Cut">
+                            <MenuItem.Icon>
+                                <Image Source="Resources/cut.png" Width="20" Height="20"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Copy" Command="ApplicationCommands.Copy">
+                            <MenuItem.Icon>
+                                <Image Source="Resources/copy.png" Width="20" Height="20"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Paste" Command="ApplicationCommands.Paste">
+                            <MenuItem.Icon>
+                                <Image Source="Resources/paste.png" Width="20" Height="20"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </InkCanvas.ContextMenu>
+            </InkCanvas>
+        </Border>
+        <xctk:ColorPicker Name="ColorPicker" Grid.Row="2" 
+                          Visibility="Hidden" SelectedColorChanged="ColorPicker_SelectedColorChanged" 
+                          VerticalAlignment="Top" HorizontalAlignment="Right" 
+                          Height="20" Width="100" Margin="5"></xctk:ColorPicker>
+        <xctk:ColorPicker Name="BrushPicker" Grid.Row="2" 
+                          Visibility="Hidden" SelectedColorChanged="BrushPicker_SelectedColorChanged" 
+                          VerticalAlignment="Top" HorizontalAlignment="Right" 
+                          Height="20" Width="100" Margin="5 30 5 5"></xctk:ColorPicker>
+        <StatusBar Grid.Row="3" Grid.ColumnSpan="2" Foreground="{DynamicResource foregroundColor}">
+            <StatusBarItem Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                <TextBlock Name="TextBlockStatusBar" FontFamily="{DynamicResource fontFamily}"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
